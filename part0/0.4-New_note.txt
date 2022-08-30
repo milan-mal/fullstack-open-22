@@ -1,0 +1,40 @@
+title Untitled
+
+note over browser:
+send form data:
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+Server asks the to
+do a new HTTP GET:
+end note
+
+server-->browser: URL redirect (302): location: /exampleapp/notes
+
+note over browser:
+browser requests the /notes
+based on the redirect:
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: status code (200)
+
+note over browser:
+browser fetches the css and js
+as specified in the index head:
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser executes the js
+requesting the json:
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
