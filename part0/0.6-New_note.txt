@@ -1,0 +1,14 @@
+title 0.6: New note
+
+note over browser:
+Message and timestamp sent
+in payload as a json: 
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: 201 (with response message)
+
+note over browser:
+Javascript code creates a new note
+and adds it to the list using an event handler.
+end note
