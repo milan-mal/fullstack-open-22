@@ -10,9 +10,19 @@ const Content = (props) => {
   console.log("component \"Content\" run");
   return (
     <div>
-      <p>The first part is called {props.part1} and has {props.exercises1} exercises.</p>
-      <p>The second part is called {props.part2} and has {props.exercises2} exercises.</p>
-      <p>The third part is called {props.part3} and has {props.exercises3} exercises.</p>
+      <Part part={props.part1} exercise={props.exercises1} />
+      <Part part={props.part2} exercise={props.exercises2} />
+      <Part part={props.part3} exercise={props.exercises3} />
+    </div>
+  )
+}
+
+
+const Part = (props) => {
+  console.log("component \"Part\" run");
+  return (
+    <div>
+      <p>{props.part}: {props.exercise} exercises</p>
     </div>
   )
 }
