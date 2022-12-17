@@ -2,21 +2,28 @@ import { useState } from 'react'
 
 const Statistics = ({good, neutral, bad}) => {
   
-  let sumFeedb = isNaN(good + neutral + bad) ? 0 : good + neutral + bad
-  let averageFeedb = (good + neutral + bad) / 3
-  let positiveFeedb = sumFeedb == 0 ? 0 : good / sumFeedb * 100
+  let sumFeedb2 = isNaN(good + neutral + bad) ? 0 : good + neutral + bad
+  let sumFeedb = good + neutral + bad
 
-  return (
-    <div>
-      <h1>statistics</h1>
-      <p>good: {good}</p>
-      <p>neutral: {neutral}</p>
-      <p>bad: {bad}</p>
-      <p>all: {sumFeedb}</p>
-      <p>average: {averageFeedb}</p>
-      <p>positive: {positiveFeedb} %</p>
-    </div>
-  )
+  if (sumFeedb > 0) {
+    let averageFeedb = (good + neutral + bad) / 3
+    let positiveFeedb2 = sumFeedb === 0 ? 0 : good / sumFeedb * 100
+    let positiveFeedb = good / sumFeedb * 100
+
+    return (
+      <div>
+        <h1>statistics</h1>
+        <p>good: {good}</p>
+        <p>neutral: {neutral}</p>
+        <p>bad: {bad}</p>
+        <p>all: {sumFeedb}</p>
+        <p>average: {averageFeedb}</p>
+        <p>positive: {positiveFeedb} %</p>
+      </div>
+    )
+  }
+
+  return <p>No feedback given</p>
 }
 
 const App = () => {
