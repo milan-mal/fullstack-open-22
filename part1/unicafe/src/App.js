@@ -2,12 +2,10 @@ import { useState } from 'react'
 
 const Statistics = ({good, neutral, bad}) => {
   
-  let sumFeedb2 = isNaN(good + neutral + bad) ? 0 : good + neutral + bad
   let sumFeedb = good + neutral + bad
 
   if (sumFeedb > 0) {
-    let averageFeedb = (good + neutral + bad) / 3
-    let positiveFeedb2 = sumFeedb === 0 ? 0 : good / sumFeedb * 100
+    let averageFeedb = (good - bad) / sumFeedb
     let positiveFeedb = good / sumFeedb * 100
 
     return (
