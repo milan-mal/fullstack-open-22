@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -19,7 +19,6 @@ const App = () => {
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
 
   const handleNext = () => {
-    console.log('next anecdote button clicked')
     let selectedAnecdote = getRandomInt(anecdotes.length)
 
     setSelected(selectedAnecdote)
@@ -31,17 +30,22 @@ const App = () => {
     setPoints(pointsUpdated)
   }
   
-  useEffect(() => {
-    console.log('selected anecdote index: ', selected)
-    console.log('points: ', points)
-  })
-  
+  let maxVotesIndex = 0
+
+  for (let i = 1; i < points.length; i++) {
+    maxVotesIndex = points[maxVotesIndex] >= points[i] ? maxVotesIndex : i
+  }
+
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p>
       <p>has {points[selected]} votes</p>
       <button onClick={() => handleVote()}>vote</button>
       <button onClick={() => handleNext()}>next anecdote</button>
+      <h1>Anecdote with most votes</h1>
+      <p>{anecdotes[maxVotesIndex]}</p>
+      <p>has {points[maxVotesIndex]} votes</p>
     </div>
   )
 }
