@@ -9,6 +9,7 @@
 /part2/node_modules
 /part2/sandbox/node_modules
 /part2/courseinfo/node_modules
+/part2/notes/node_modules
 /.pnp
 .pnp.js
 
