@@ -9,18 +9,28 @@ const App = () => {
   ])
   const [newName, setNewName] = useState('')
 
+  const nameDuplicityCheck = (checkName) => {
+    const isDuplicate = persons.some((person) => person.name === checkName)
+    return isDuplicate
+  }
+
   const handleNameChange = (event) => {
     setNewName(event.target.value)
   }
 
   const addPerson = (event) => {
     event.preventDefault()
-    const newPerson = {
-      name: newName,
-      id: persons.length
+    console.log('newName', newName);
+    if (!nameDuplicityCheck(newName)) {
+      const newPerson = {
+        name: newName,
+        id: persons.length
+      }
+      setPersons(persons.concat(newPerson))
+      setNewName('')
+      return
     }
-    setPersons(persons.concat(newPerson))
-    setNewName('')
+    alert(`${newName} is already added to phonebook`)
   }
 
   return (
