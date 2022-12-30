@@ -1,3 +1,4 @@
+import CountryDetail from "./CountryDetail"
 
 const Countries = ({ countries, searchCountry }) => {
 
@@ -16,24 +17,7 @@ const Countries = ({ countries, searchCountry }) => {
                 return <p>Too many matches, specify another filter.</p>
             case (countriesFiltered.length === 1):
                 console.log(' - renderCountries case 1');
-                const countryLanguages = countriesFiltered[0].languages
-                console.log(countriesFiltered[0]);
-                console.log(countryLanguages);
-                return (
-                    <>
-                        <h2>{countriesFiltered[0].name.common}</h2>
-                        <p>
-                            capital {countriesFiltered[0].capital}
-                            <br/>
-                            area {countriesFiltered[0].area}
-                        </p>
-                        <h3>languages:</h3>
-                        <ul>
-                            {Object.entries(countryLanguages).map(([key, value]) => <li key={key}>{value}</li>)}
-                        </ul>
-                        <img src={countriesFiltered[0].flags['png']} alt='country flag' />
-                    </>
-                )
+                return <CountryDetail countriesFiltered={countriesFiltered} />
             case (countriesFiltered.length < 11):
                 console.log(' - renderCountries case <11');
                 return countriesFiltered.map(countries =>
