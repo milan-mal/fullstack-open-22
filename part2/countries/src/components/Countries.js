@@ -1,6 +1,6 @@
 import CountryDetail from "./CountryDetail"
 
-const Countries = ({ countries, searchCountry }) => {
+const Countries = ({ countries, searchCountry, setSearchCountry }) => {
 
     function checkName(country) {
         const nameMatches = country.name.common.toLowerCase().includes(searchCountry.toLowerCase())
@@ -8,6 +8,11 @@ const Countries = ({ countries, searchCountry }) => {
       }
     
     const countriesFiltered = searchCountry === '' ? countries : countries.filter(checkName)
+
+    const handleShowDetail = (countrySelected) => {
+        console.log('handleShowDetail run with',  {countrySelected}, 'selected');
+        setSearchCountry(countrySelected)
+    }
 
     function renderCountries() {
         console.log('renderCountries started');
@@ -21,7 +26,10 @@ const Countries = ({ countries, searchCountry }) => {
             case (countriesFiltered.length < 11):
                 console.log(' - renderCountries case <11');
                 return countriesFiltered.map(countries =>
-                    <p key={countries.cca3}>{countries.name.common}</p>
+                    <p key={countries.cca3}>
+                        {countries.name.common}
+                        <button onClick={() => handleShowDetail(countries.name.common) }>show</button>
+                    </p>
                 )
             default:
                 console.log(' - renderCountries case default');
