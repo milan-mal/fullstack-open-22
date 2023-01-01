@@ -12,6 +12,9 @@
 /part2/notes/node_modules
 /part2/phonebook/node_modules
 /part2/countries/node_modules
+/part2/countries/.env
+/part2/notes/.env
+/part2/phonebook/.env
 /.pnp
 .pnp.js
 

@@ -1,6 +1,6 @@
 import CountryDetail from "./CountryDetail"
 
-const Countries = ({ countries, searchCountry, setSearchCountry }) => {
+const Countries = ({ countries, searchCountry, setSearchCountry, countryWeather, setCountryWeather }) => {
 
     function checkName(country) {
         const nameMatches = country.name.common.toLowerCase().includes(searchCountry.toLowerCase())
@@ -15,16 +15,15 @@ const Countries = ({ countries, searchCountry, setSearchCountry }) => {
     }
 
     function renderCountries() {
-        console.log('renderCountries started');
         switch(true) {
             case (countriesFiltered.length === 0):
-                console.log(' - renderCountries case 0');
+                console.log('renderCountries case 0');
                 return <p>Too many matches, specify another filter.</p>
             case (countriesFiltered.length === 1):
-                console.log(' - renderCountries case 1');
-                return <CountryDetail countriesFiltered={countriesFiltered} />
+                console.log('renderCountries case 1');
+                return <CountryDetail countries={countries} countriesFiltered={countriesFiltered} countryWeather={countryWeather} setCountryWeather={setCountryWeather} />
             case (countriesFiltered.length < 11):
-                console.log(' - renderCountries case <11');
+                console.log('renderCountries case <11');
                 return countriesFiltered.map(countries =>
                     <p key={countries.cca3}>
                         {countries.name.common}
@@ -32,7 +31,7 @@ const Countries = ({ countries, searchCountry, setSearchCountry }) => {
                     </p>
                 )
             default:
-                console.log(' - renderCountries case default');
+                console.log('renderCountries case default');
                 return <p>Too many matches, specify another filter.</p>
         }
     }
