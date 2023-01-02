@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons }) => {
     const handleNameChange = (event) => {
         setNewName(event.target.value)
@@ -18,12 +20,18 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
         if (!nameDuplicityCheck(newName)) {
         const newPerson = {
             name: newName,
-            id: persons.length + 1,
+            //id: persons.length + 1,   // commented out to make the server add the id 
             number: newNumber,
         }
-        setPersons(persons.concat(newPerson))
-        setNewName('')
-        setNewNumber('')
+
+        // Send the new contact to the server:
+        axios
+            .post('http://localhost:3001/persons', newPerson)
+            .then(response => {
+                setPersons(persons.concat(response.data))
+                setNewName('')
+                setNewNumber('')
+            })
         return
         }
         alert(`${newName} is already added to phonebook`)
