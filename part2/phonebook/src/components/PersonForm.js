@@ -1,4 +1,4 @@
-import axios from "axios"
+import contactService from '../services/contacts'
 
 const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons }) => {
     const handleNameChange = (event) => {
@@ -25,10 +25,10 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
         }
 
         // Send the new contact to the server:
-        axios
-            .post('http://localhost:3001/persons', newPerson)
-            .then(response => {
-                setPersons(persons.concat(response.data))
+        contactService
+            .create(newPerson)
+            .then(returnedPerson => {
+                setPersons(persons.concat(returnedPerson))
                 setNewName('')
                 setNewNumber('')
             })
