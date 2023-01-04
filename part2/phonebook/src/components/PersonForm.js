@@ -10,20 +10,19 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
     }
 
     const nameDuplicityCheck = (checkName) => {
-      const isDuplicate = persons.some((person) => person.name === checkName)
+      const isDuplicate = persons.some((person) => person.name.toLowerCase() === checkName.toLowerCase())
       return isDuplicate
     }
     
     const addPerson = (event) => {
         event.preventDefault()
         console.log('newName: ', newName,', newNumber: ', newNumber);
+
         if (!nameDuplicityCheck(newName)) {
         const newPerson = {
             name: newName,
-            //id: persons.length + 1,   // commented out to make the server add the id 
             number: newNumber,
         }
-
         // Send the new contact to the server:
         contactService
             .create(newPerson)
@@ -34,7 +33,19 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
             })
         return
         }
-        alert(`${newName} is already added to phonebook`)
+        //TODO If the name already exists, update their phone number:
+        if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
+            const duplicitNameObject = persons.find((person) => person.name.toLowerCase() === newName.toLowerCase())
+            console.log((`id: ${duplicitNameObject.id}, number: ${newNumber}`));
+            contactService
+                .update(duplicitNameObject.id, newNumber)
+                .then(returnedPerson => {
+                    setPersons(persons.map( person => person.id === duplicitNameObject.id ? returnedPerson : person))
+                    setNewName('')
+                    setNewNumber('')
+                })
+            return
+        }
     }
 
     return(
