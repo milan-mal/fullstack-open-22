@@ -1,6 +1,6 @@
 import contactService from '../services/contacts'
 
-const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons }) => {
+const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons, setMessage }) => {
     const handleNameChange = (event) => {
         setNewName(event.target.value)
     }
@@ -28,9 +28,13 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
             .create(newPerson)
             .then(returnedPerson => {
                 setPersons(persons.concat(returnedPerson))
+                // Set a success message:
+                setMessage(`Added ${newName}.`)
+                setTimeout(() => setMessage(null), 5000)
                 setNewName('')
                 setNewNumber('')
             })
+        
         return
         }
         //TODO If the name already exists, update their phone number:
@@ -41,6 +45,9 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
                 .update(duplicitNameObject.id, newNumber)
                 .then(returnedPerson => {
                     setPersons(persons.map( person => person.id === duplicitNameObject.id ? returnedPerson : person))
+                    // Set a success message:
+                    setMessage(`${newName}'s number has been updated.`)
+                    setTimeout(() => setMessage(null), 5000)
                     setNewName('')
                     setNewNumber('')
                 })
