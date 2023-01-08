@@ -1,6 +1,6 @@
 import contactService from '../services/contacts'
 
-const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons, setMessage }) => {
+const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, setPersons, setMessage, setErrorMessage }) => {
     const handleNameChange = (event) => {
         setNewName(event.target.value)
     }
@@ -45,11 +45,18 @@ const PersonForm = ({ newName, setNewName, newNumber, setNewNumber, persons, set
                 .update(duplicitNameObject.id, newNumber)
                 .then(returnedPerson => {
                     setPersons(persons.map( person => person.id === duplicitNameObject.id ? returnedPerson : person))
-                    // Set a success message:
+                    // Set an error message:
                     setMessage(`${newName}'s number has been updated.`)
                     setTimeout(() => setMessage(null), 5000)
                     setNewName('')
                     setNewNumber('')
+                })
+                .catch(error => {
+                    setErrorMessage(`Person ${newName} was already deleted from the server.`)
+                    setTimeout(() => {
+                        setErrorMessage(null)
+                    }, 5000)
+                  setPersons(persons.filter(n => n.id !== duplicitNameObject.id))
                 })
             return
         }
