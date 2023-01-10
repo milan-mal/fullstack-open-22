@@ -1,20 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/part1/anecdotes/node_modules
-/part1/courseinfo/node_modules
-/part1/unicafe/node_modules
-/part1/node_modules
-/part2/node_modules
-/part2/sandbox/node_modules
-/part2/courseinfo/node_modules
-/part2/notes/node_modules
-/part2/phonebook/node_modules
-/part2/countries/node_modules
-/part2/countries/.env
-/part2/notes/.env
-/part2/phonebook/.env
+**/node_modules
+**/.env
 /.pnp
 .pnp.js
 
