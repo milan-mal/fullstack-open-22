@@ -60,6 +60,10 @@ const generateId = () => {
 
 app.post('/api/notes', (request, response) => {
   const body = request.body
+  console.log("body", body);
+  console.log("body.content", body.content);
+  console.log("body", typeof(body));
+  console.log("body.content", typeof(body.content));
 
   if (!body.content) {
     return response.status(400).json({
@@ -79,7 +83,13 @@ app.post('/api/notes', (request, response) => {
   console.log(request.headers)
 })
 
-const PORT = 3001
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: 'unknown endpoint' })
+}
+
+app.use(unknownEndpoint)
+
+const PORT = 3002
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })
