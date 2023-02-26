@@ -11,7 +11,9 @@
 
 # production
 /build
+/part2/notes/build
 /part2/phonebook/build
+/part3/hello-world-be/build
 
 # misc
 .DS_Store
