@@ -11,6 +11,7 @@
 
 # production
 /build
+/part2/phonebook/build
 
 # misc
 .DS_Store
