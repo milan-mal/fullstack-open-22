@@ -3,4 +3,4 @@ Dockerfile
 .dockerignore
 node_modules
 .git
-.envs
+.env

@@ -1,0 +1,8 @@
+PUT http://localhost:3001/api/notes/6404b451866691abfc4f5719
+Content-Type: application/json
+
+//TODO
+{
+    "content": "Postman is nice for testing.",
+    "important": false
+}
