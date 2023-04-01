@@ -25,11 +25,15 @@ app.get('/api/notes/:id', (request, response) => {
   console.log('EP:', request.url)
   Note.findById(request.params.id)
     .then(note => {
-      console.log('note', note)
-      response.json(note)
+      if (note) {
+        response.json(note)
+      } else {
+        response.status(404).end()
+      }
     })
-    .catch((error) =>{
-      console.log(`Note with this id doesn't exist.`, error.message)
+    .catch(error => {
+      console.log(error)
+      response.status(400).send({ error: 'malformatted id' })
   })
 })
 
