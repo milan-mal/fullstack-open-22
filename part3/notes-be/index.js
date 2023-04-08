@@ -55,8 +55,6 @@ app.post('/api/notes', (request, response, next) => {
       response.json(savedNote)
     })
     .catch(error => next(error))
-
-  console.log(request.headers)
 })
 
 app.put('/api/notes/:id', (request, response, next) => {
