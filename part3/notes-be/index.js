@@ -55,14 +55,14 @@ app.post('/api/notes', (request, response, next) => {
       response.json(savedNote)
     })
     .catch(error => next(error))
-})
+  })
 
 app.put('/api/notes/:id', (request, response, next) => {
   const { content, important } = request.body
 
   Note.findByIdAndUpdate(
     request.params.id,
-    note,
+    { content, important},
     { new: true, runValidators: true, context: 'query' }
   )
     .then(updatedNote => {
