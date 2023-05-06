@@ -10,7 +10,8 @@
     "build:ui": "rm -rf build && cd ../../part2/notes/ && npm run build && cp -r build ../../part3/notes-be",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
   },
   "author": "Milan M.",
   "license": "ISC",

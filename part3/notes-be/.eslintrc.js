@@ -1,31 +1,41 @@
+/* eslint-disable linebreak-style */
 module.exports = {
-    "env": {
-        "node": true,
-        "commonjs": true,
-        "es2021": true
+    'env': {
+        'node': true,
+        'commonjs': true,
+        'es2021': true
     },
-    "extends": "eslint:recommended",
-    "overrides": [
+    'extends': 'eslint:recommended',
+    'overrides': [
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
+    'parserOptions': {
+        'ecmaVersion': 'latest'
     },
-    "rules": {
-        "indent": [
-            "error",
-            "2"
+    'rules': {
+        'indent': [
+            'warn',
+            4
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
+        'linebreak-style': [
+            'warn',
+            'windows'
         ],
-        "quotes": [
-            "error",
-            "single"
+        'quotes': [
+            'warn',
+            'single'
         ],
-        "semi": [
-            "error",
-            "never"
-        ]
+        'semi': [
+            'error',
+            'never'
+        ],
+        'eqeqeq': 'error',
+        'no-trailing-spaces': 'error',
+        'object-curly-spacing': [
+            'error', 'always'
+        ],
+        'arrow-spacing': [
+            'error', { 'before': true, 'after': true }
+        ],
+        'no-console': 0
     }
 }
