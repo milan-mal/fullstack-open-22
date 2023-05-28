@@ -1,4 +1,4 @@
-require('dotenv').config()
+const config = require('./utils/config')
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -14,7 +14,7 @@ const blogSchema = new mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema)
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(config.MONGODB_URI)
   .then(() => {
     logger.info('connected to MongoDB')
   })
