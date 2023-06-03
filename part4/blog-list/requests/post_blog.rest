@@ -2,8 +2,8 @@ POST http://localhost:3001/api/blogs/
 Content-Type: application/json
 
 {
-    "title": "test blog 4",
+    "title": "test blog",
     "author": "Milan",
-    "url": "mongodb.com",
+    "url": "seznam.cz",
     "likes": 0
 }

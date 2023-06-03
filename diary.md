@@ -1,3 +1,10 @@
+*3. 6. 2023*
+- 4.2: Refactor into modules: middleware, controllers, models.
+- added diary.md to git.
+
+*1.-2. 6. 2023*
+- Setting up SSH on Dell laptop.
+
 *28. 5. 2023*
 - 4.2: Refactor into modules: logger, config, app.
 
