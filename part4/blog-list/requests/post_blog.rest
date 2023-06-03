@@ -2,8 +2,8 @@ POST http://localhost:3001/api/blogs/
 Content-Type: application/json
 
 {
-    "title": "test blog 3",
+    "title": "test blog 4",
     "author": "Milan",
-    "url": "http://www.livesport.cz/",
+    "url": "mongodb.com",
     "likes": 0
 }
