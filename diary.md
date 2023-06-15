@@ -1,3 +1,13 @@
+*15. 6. 2023*
+- run npm test, tried a success and a failed test.
+- Added test for average, fixed average for 0.
+
+*7. 6. 2023*
+- Testing Node apps
+ - package.json edit, test script created.
+ - test.js added (using expect.toBe).
+- Added ESlint.
+
 *3. 6. 2023*
 - 4.2: Refactor into modules: middleware, controllers, models.
 - added diary.md to git.
