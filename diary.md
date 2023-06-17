@@ -1,5 +1,7 @@
 *17. 6. 2023*
 - Exercise 4.3. - basic dummy function and its test.
+- 4.4: helper functions and unit tests, step2.
+ - sum of attributes of an array of objects using resudce().
 
 *15. 6. 2023*
 - run npm test, tried a success and a failed test.
