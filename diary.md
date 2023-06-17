@@ -1,3 +1,6 @@
+*17. 6. 2023*
+- Exercise 4.3. - basic dummy function and its test.
+
 *15. 6. 2023*
 - run npm test, tried a success and a failed test.
 - Added test for average, fixed average for 0.
