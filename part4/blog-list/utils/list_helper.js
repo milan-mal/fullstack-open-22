@@ -4,10 +4,7 @@ const dummy = (blogs) => {
 }
 
 const totalLikes = (blogs) => {
-  console.log('blogs', blogs)
-
   const likeArray = blogs.map(blog => blog.likes)
-  console.log('likeArray', likeArray)
 
   const likeSum = (sum, likes) => {
     return sum + likes
@@ -16,7 +13,20 @@ const totalLikes = (blogs) => {
   return likeArray.reduce(likeSum)
 }
 
+const favoriteBlog = (blogs) => {
+  if (blogs.length === 0) return null
+
+  const favorite = blogs.reduce((maxLikesBlog, currentBlog) => {
+    if (currentBlog.likes > maxLikesBlog.likes) return currentBlog
+    else return maxLikesBlog
+  })
+
+  const { title, author, likes } = favorite
+  return { title, author, likes }
+}
+
 module.exports = {
   dummy,
-  totalLikes
+  totalLikes,
+  favoriteBlog
 }
