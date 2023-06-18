@@ -1,3 +1,7 @@
+*18. 6. 2023*
+- 4.6*: helper functions and unit tests, step4.
+ - Created function and its test to find an author with the most blogs from the blogs array.
+
 *17. 6. 2023*
 - Exercise 4.3. - basic dummy function and its test.
 - 4.4: helper functions and unit tests, step2.
