@@ -124,4 +124,11 @@ describe('blogs report', () => {
       blogs: 3
     })
   })
+
+  test('author with the most likes from the listLarge', () => {
+    expect(listHelper.mostLikes(listBlogsLarge)).toEqual({
+      author: 'Edsger W. Dijkstra',
+      likes: 17
+    })
+  })
 })

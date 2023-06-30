@@ -1,8 +1,14 @@
+*30. 6. 2023*
+- checked 4.7, commited.
+
+*24. 6. 2023*
+- started 4.7*
+
 *18. 6. 2023*
 - 4.6*: helper functions and unit tests, step4.
  - Created function and its test to find an author with the most blogs from the blogs array.
  - Solved without lodash.
- - Checked the solution using loadsh with ChatGPT.
+ - Checked the solution using lodash with ChatGPT.
 
 *17. 6. 2023*
 - Exercise 4.3. - basic dummy function and its test.
