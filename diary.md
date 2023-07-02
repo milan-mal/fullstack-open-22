@@ -1,5 +1,10 @@
+*2. 7. 2023*
+- Reading 4b, Test environment, installed jest (dev), cross-env, added .env.
+- Supertest, created tests, test db, added jest rule to eslint, edited config for different environments.
+
 *30. 6. 2023*
 - checked 4.7, commited.
+- Started reading 4b, Test environment.
 
 *24. 6. 2023*
 - started 4.7*
