@@ -1,6 +1,11 @@
+*6. 7. 2023*
+- async/await in the backend, More tests and refactoring the backend.
+- Learned try/catch, added test helper
+
 *2. 7. 2023*
 - Reading 4b, Test environment, installed jest (dev), cross-env, added .env.
 - Supertest, created tests, test db, added jest rule to eslint, edited config for different environments.
+- Reading Initializing the database before tests, Running tests one by one, async/await.
 
 *30. 6. 2023*
 - checked 4.7, commited.
