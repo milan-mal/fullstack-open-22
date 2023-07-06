@@ -3,6 +3,7 @@
 - Learned try/catch, added test helper.
 - Error handling and async/await.
 - Adding tests before refactoring controllers to await.
+- Eliminating the try-catch, added express-async-errors library.
 
 *2. 7. 2023*
 - Reading 4b, Test environment, installed jest (dev), cross-env, added .env.
