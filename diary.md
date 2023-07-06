@@ -1,6 +1,8 @@
 *6. 7. 2023*
 - async/await in the backend, More tests and refactoring the backend.
-- Learned try/catch, added test helper
+- Learned try/catch, added test helper.
+- Error handling and async/await.
+- Adding tests before refactoring controllers to await.
 
 *2. 7. 2023*
 - Reading 4b, Test environment, installed jest (dev), cross-env, added .env.
