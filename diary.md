@@ -1,3 +1,11 @@
+*8. 7. 2023*
+- Optimizing the beforeEach function
+ - Running an async function with other async functions inside can cause problems.
+  The top async function doesn't wait for the lower ones to finish executing.
+ - Promise.all transforms an array of promises into a single promise.
+  - Will be fulfilled once every of its promises is resolved.
+- A true full stack developer's oath.
+
 *6. 7. 2023*
 - async/await in the backend, More tests and refactoring the backend.
 - Learned try/catch, added test helper.
