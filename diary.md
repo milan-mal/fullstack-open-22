@@ -1,5 +1,7 @@
 *9. 7. 2023*
-- Exercise 4.8. - create first test, test_helper.
+- Exercise 4.8.
+ - create first test, test_helper.
+ - Changed routeHandler to async.
 
 *8. 7. 2023*
 - Optimizing the beforeEach function
