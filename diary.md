@@ -1,3 +1,6 @@
+*9. 7. 2023*
+- Exercise 4.8. - create first test, test_helper.
+
 *8. 7. 2023*
 - Optimizing the beforeEach function
  - Running an async function with other async functions inside can cause problems.
