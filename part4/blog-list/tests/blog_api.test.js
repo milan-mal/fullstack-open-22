@@ -39,7 +39,7 @@ test('new blog is correctly to the DB added using POST', async () => {
     title: 'new blog',
     author: 'Milan',
     url: 'https://www.example.com/',
-    likes: 1,
+    likes: 1
   }
 
   await api
@@ -53,6 +53,22 @@ test('new blog is correctly to the DB added using POST', async () => {
 
   const titles = blogsAtEnd.map(blog => blog.title)
   expect(titles).toContain('new blog')
+})
+
+test('POSTing a new blog without likes defaults the value to a 0', async () => {
+  const newBlog = {
+    title: 'new blog without likes',
+    author: 'Milan',
+    url: 'https://www.netflix.com/'
+  }
+
+  const response = await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(201)
+    .expect('Content-Type', /application\/json/)
+
+  expect(response.body.likes).toEqual(0)
 })
 
 afterAll(async () => {
