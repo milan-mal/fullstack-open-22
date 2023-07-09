@@ -34,6 +34,27 @@ test('checking the name of the id property', async () => {
   }
 })
 
+test('new blog is correctly to the DB added using POST', async () => {
+  const newBlog = {
+    title: 'new blog',
+    author: 'Milan',
+    url: 'https://www.example.com/',
+    likes: 1,
+  }
+
+  await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(201)
+    .expect('Content-Type', /application\/json/)
+
+  const blogsAtEnd = await helper.blogsInDb()
+  expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length + 1)
+
+  const titles = blogsAtEnd.map(blog => blog.title)
+  expect(titles).toContain('new blog')
+})
+
 afterAll(async () => {
   await mongoose.connection.close()
 })

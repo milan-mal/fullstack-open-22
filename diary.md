@@ -2,6 +2,7 @@
 - Exercise 4.8.
  - create first test, test_helper.
  - Changed routeHandler to async.
+- Exercise 4.9. - Using Jest's toBeDefined to check for a name of a property.
 
 *8. 7. 2023*
 - Optimizing the beforeEach function
