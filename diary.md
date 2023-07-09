@@ -5,6 +5,8 @@
 - Exercise 4.9 - Using Jest's toBeDefined to check for a name of a property.
 - Exercise 4.10 - Test that POST creates a blog post in DB (length and title check).
 - Exercise 4.11* - Allowing adding blogs without likes property, defaulting to 0 and added a test for it.
+- Exercise 4.12* - Added logic and tests to return 400 if attempted to send a blog without a title or url.
+
 
 *8. 7. 2023*
 - Optimizing the beforeEach function

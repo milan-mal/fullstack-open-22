@@ -71,6 +71,30 @@ test('POSTing a new blog without likes defaults the value to a 0', async () => {
   expect(response.body.likes).toEqual(0)
 })
 
+test('POSTing a new blog without a title returns 400', async () => {
+  const newBlog = {
+    title: 'a blog without an url',
+    author: 'Milan'
+  }
+
+  await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(400)
+})
+
+test('POSTing a new blog without an url returns 400', async () => {
+  const newBlog = {
+    author: 'Milan',
+    url: 'https://www.no-title.com',
+  }
+
+  await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(400)
+})
+
 afterAll(async () => {
   await mongoose.connection.close()
 })
