@@ -27,6 +27,13 @@ test('getting all blogs returns the correct count', async () => {
   expect(response.body).toHaveLength(helper.initialBlogs.length)
 })
 
+test('checking the name of the id property', async () => {
+  const response = await api.get('/api/blogs')
+  for( const blog in response.body) {
+    expect(response.body[blog].id).toBeDefined()
+  }
+})
+
 afterAll(async () => {
   await mongoose.connection.close()
 })
