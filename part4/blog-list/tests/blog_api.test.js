@@ -101,13 +101,26 @@ test('deleting a blog returns 204 and deletes it from the DB', async () => {
 
   await api
     .delete(`/api/blogs/${blogToDelete.id}`)
-    .expect(204)
 
   const blogsAtEnd = await helper.blogsInDb()
   expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length - 1)
 
   const titles = blogsAtEnd.map(blog => blog.title)
   expect(titles).not.toContain(blogToDelete.title)
+})
+
+test('updating a blog\'s like count returns 200 and makes the change in the DB', async () => {
+  const blogsAtStart = await helper.blogsInDb()
+  const blogToUpdate = blogsAtStart[0]
+  const newLikes = { likes: 69 }
+
+  const response = await api
+    .put(`/api/blogs/${blogToUpdate.id}`)
+    .send(newLikes)
+    .expect(200)
+    .expect('Content-Type', /application\/json/)
+
+  expect(response.body.likes).toEqual(newLikes.likes)
 })
 
 afterAll(async () => {

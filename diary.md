@@ -1,7 +1,7 @@
 ### 10. 7. 2023
-- 4b Refactoring tests using Desribe blocks.
+- 4b Refactoring tests using describe blocks.
 - Exercise 4.13 - added delete and its test.
-- Exercise 4.14 - added updating likes of a note.
+- Exercise 4.14 - added updating likes of a note and its test.
 
 ### 9. 7. 2023
 - Exercise 4.8
