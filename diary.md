@@ -1,5 +1,6 @@
 *10. 7. 2023*
 - 4b Refactoring tests using Desribe blocks.
+- Exercise 4.13 added delete and its test.
 
 *9. 7. 2023*
 - Exercise 4.8
