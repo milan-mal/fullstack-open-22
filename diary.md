@@ -1,8 +1,9 @@
-*10. 7. 2023*
+### 10. 7. 2023
 - 4b Refactoring tests using Desribe blocks.
-- Exercise 4.13 added delete and its test.
+- Exercise 4.13 - added delete and its test.
+- Exercise 4.14 - added updating likes of a note.
 
-*9. 7. 2023*
+### 9. 7. 2023
 - Exercise 4.8
  - create first test, test_helper.
  - Changed routeHandler to async.
@@ -11,7 +12,7 @@
 - Exercise 4.11* - Allowing adding blogs without likes property, defaulting to 0 and added a test for it.
 - Exercise 4.12* - Added logic and tests to return 400 if attempted to send a blog without a title or url.
 
-*8. 7. 2023*
+### 8. 7. 2023
 - Optimizing the beforeEach function
  - Running an async function with other async functions inside can cause problems.
   The top async function doesn't wait for the lower ones to finish executing.
@@ -19,18 +20,19 @@
   - Will be fulfilled once every of its promises is resolved.
 - A true full stack developer's oath.
 
-*6. 7. 2023*
+### 6. 7. 2023
 - async/await in the backend, More tests and refactoring the backend.
 - Learned try/catch, added test helper.
 - Error handling and async/await.
 - Adding tests before refactoring controllers to await.
 - Eliminating the try-catch, added express-async-errors library.
 
-*2. 7. 2023*
+### 2. 7. 2023
 - Reading 4b, Test environment, installed jest (dev), cross-env, added .env.
 - Supertest, created tests, test db, added jest rule to eslint, edited config for different environments.
 - Reading Initializing the database before tests, Running tests one by one, async/await.
 
+## Archive
 *30. 6. 2023*
 - checked 4.7, commited.
 - Started reading 4b, Test environment.
