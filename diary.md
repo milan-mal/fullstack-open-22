@@ -1,7 +1,12 @@
+### 17. 7. 2023
+- 4c Mongoose schema for users, added references to schemas.
+- Creating users - install bcrypt, added users router. /TODO test
+
 ### 10. 7. 2023
 - 4b Refactoring tests using describe blocks.
 - Exercise 4.13 - added delete and its test.
 - Exercise 4.14 - added updating likes of a note and its test.
+- Continue reading 4c User administration.
 
 ### 9. 7. 2023
 - Exercise 4.8
@@ -11,6 +16,7 @@
 - Exercise 4.10 - Test that POST creates a blog post in DB (length and title check).
 - Exercise 4.11* - Allowing adding blogs without likes property, defaulting to 0 and added a test for it.
 - Exercise 4.12* - Added logic and tests to return 400 if attempted to send a blog without a title or url.
+- Started reading 4c User administration.
 
 ### 8. 7. 2023
 - Optimizing the beforeEach function
