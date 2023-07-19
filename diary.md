@@ -1,3 +1,9 @@
+### 19. 7. 2023
+- Creating users - added tests, split tests for users and notes into "describe" blocks.
+- Debugging tests - they fail on beforeEach (missing MongoDB test donfig in .env).
+- Added module mongoose-unique-validator.
+- /TODO route handler for gettign users.
+
 ### 17. 7. 2023
 - 4c Mongoose schema for users, added references to schemas.
 - Creating users - install bcrypt, added users router. /TODO test
