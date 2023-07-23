@@ -1,3 +1,6 @@
+### 23. 7. 2023
+- Adding the user to the note.
+
 ### 22. 7. 2023
 - Route handler for getting users.
 
