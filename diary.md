@@ -1,3 +1,6 @@
+### 28. 7. 2023
+- 4c Populate, finished 4c.
+
 ### 23. 7. 2023
 - Adding the user to the note.
 
