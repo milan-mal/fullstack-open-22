@@ -1,7 +1,7 @@
 ### 30. 7. 2023
-- Continue 4d Token authentication.
- - Added controller for login.
+- Continue 4d Token authentication - Added controller for login.
 - Added project readme.md for Notes BE.
+- 4d Limiting creating new notes to logged-in users.
 
 ### 28. 7. 2023
 - 4c Populate, finished 4c.
