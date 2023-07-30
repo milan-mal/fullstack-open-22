@@ -3,6 +3,7 @@
 - Added project readme.md for Notes BE.
 - 4d Limiting creating new notes to logged-in users.
 - 4d Problems of Token-based authentication - token expiration.
+- 4.15: bloglist expansion, step3 - adding and getting users in blog-list.
 
 ### 28. 7. 2023
 - 4c Populate, finished 4c.
