@@ -1,5 +1,12 @@
+### 30. 7. 2023
+- Continue 4d Token authentication.
+ - Added controller for login.
+- Added project readme.md for Notes BE.
+
 ### 28. 7. 2023
 - 4c Populate, finished 4c.
+- Started 4d Token authentication.
+ - npm install jsonwebtoken
 
 ### 23. 7. 2023
 - Adding the user to the note.
