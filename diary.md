@@ -4,6 +4,7 @@
 - 4d Limiting creating new notes to logged-in users.
 - 4d Problems of Token-based authentication - token expiration.
 - 4.15: bloglist expansion, step3 - adding and getting users in blog-list.
+- 4.16*: bloglist expansion, username/pass validations started.
 
 ### 28. 7. 2023
 - 4c Populate, finished 4c.
