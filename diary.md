@@ -1,3 +1,6 @@
+### 9. 8. 2023
+- 4.16*: bloglist expansion, prepared test file for user tests, added helper, started first user test
+
 ### 30. 7. 2023
 - Continue 4d Token authentication - Added controller for login.
 - Added project readme.md for Notes BE.
