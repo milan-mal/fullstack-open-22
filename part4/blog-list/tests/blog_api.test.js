@@ -139,7 +139,7 @@ describe('user tests', () => {
   })
 
   test('user is SUCCESSfully added', async () => {
-    const usersAtStart = helper.usersInDb()
+    const usersAtStart = await helper.usersInDb()
 
     const newUser = {
       name: 'MilanTest',
@@ -151,6 +151,25 @@ describe('user tests', () => {
       .post('/api/users/')
       .send(newUser)
       .expect(201)
+      .expect('Content-Type', /application\/json/)
+
+    const usersAtEnd = await helper.usersInDb()
+    expect(usersAtEnd).toHaveLength(usersAtStart.length + 1)
+
+    const usernames = usersAtEnd.map(user => user.username)
+    expect(usernames).toContain(newUser.username)
+  })
+
+  test('invalid user (no username) is not created', async() => {
+    const newUser = {
+      name: 'MilanTest',
+      password: 'hesloheslo'
+    }
+
+    await api
+      .post('/api/users/')
+      .send(newUser)
+      .expect(400)
       .expect('Content-Type', /application\/json/)
   })
 })

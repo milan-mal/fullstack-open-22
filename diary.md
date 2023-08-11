@@ -1,3 +1,6 @@
+### 11. 8. 2023
+- 
+
 ### 9. 8. 2023
 - 4.16*: bloglist expansion, prepared test file for user tests, added helper, started first user test
 
