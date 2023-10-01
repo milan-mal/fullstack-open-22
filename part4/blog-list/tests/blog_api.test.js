@@ -161,6 +161,8 @@ describe('user tests', () => {
   })
 
   test('invalid user (no username) is not created', async() => {
+    const usersAtStart = await helper.usersInDb()
+    
     const newUser = {
       name: 'MilanTest',
       password: 'hesloheslo'
@@ -171,6 +173,9 @@ describe('user tests', () => {
       .send(newUser)
       .expect(400)
       .expect('Content-Type', /application\/json/)
+
+      const usersAtEnd = await helper.usersInDb()
+      expect(usersAtEnd).toHaveLength(usersAtStart.length)
   })
 })
 
