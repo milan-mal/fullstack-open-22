@@ -33,6 +33,10 @@
     "supertest": "^6.3.3"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "globalTeardown": "./tests/teardown.js",
+    "setupFilesAfterEnv": [
+      "./config.js"
+    ]
   }
 }
